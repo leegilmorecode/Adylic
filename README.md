@@ -46,18 +46,18 @@ To run the program please do the following
 
 To install the application please do the following steps:
 
-1. Install node version 15.11.0 (_see the following link to installing via nvm: https://github.com/nvm-sh/nvm_)
+1. Install node version 14.16.0 (_see the following link to installing via nvm: https://github.com/nvm-sh/nvm_)
 
 2. Using your terminal run the following command to install the correct node version via nvm:
 
 ```
-nvm install v15.11.0
+nvm install v14.16.0
 ```
 
 3. Run the following command to use the node version just installed:
 
 ```
-nvm use v15.1.0
+nvm use v14.16.0
 ```
 
 4. In the root of the folder run the following command to install the application:
@@ -85,10 +85,11 @@ The following table shows the various commands which can be ran:
 
 The solution has been designed so that:
 
-1. Input parameters are tested up front.
+1. Input parameters are tested up front (_inc ensuring to and from keys are upper case_)
 2. the data feed can be switched out at a later date simply by changing the url in the config file.
 3. the data will most probably come back in a different shape if the url changes, so it can be easily transposed using function _transformData(data)_ so the remainder of the program runs as usual.
-4. The calculation function ensures that the transposed data is in the correct shape using schema validation.
+4. The calculation function ensures that the transposed data (_regardless of where it comes from_) is in the correct shape using schema validation.
+5. All errors are caught and user friendly, rather than unexpected errors being displayed to the end user.
 
 ### Linting/Code Standards
 

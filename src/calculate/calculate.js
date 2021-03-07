@@ -3,11 +3,10 @@ const calculateSchema = require('./schema');
 const { euro } = require('../config');
 
 const ajv = new Ajv({ allErrors: true });
+const validate = ajv.compile(calculateSchema);
 
 function calculate(value, from, to, data) {
   try {
-    const validate = ajv.compile(calculateSchema);
-
     if (!validate(data)) throw new Error('Invalid data format');
 
     // check if the exchange rate is from/to base euros (no conversation between currencies)

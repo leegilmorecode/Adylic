@@ -13,7 +13,7 @@ process.on(UNHANDLED_REJECTION, (err) => {
 });
 
 async function convertCurrency() {
-  const { value, to, from } = validateArgs(process.argv);
+  const { value, from, to } = validateArgs(process.argv);
   const data = await retrieveData(dataUrl);
   const items = await transformData(data);
   const result = calculate(value, from, to, items);

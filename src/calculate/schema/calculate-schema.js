@@ -1,6 +1,5 @@
 const calculateSchema = {
   type: 'array',
-  default: [],
   items: {
     type: 'object',
     required: ['currency', 'rate'],

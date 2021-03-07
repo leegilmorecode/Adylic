@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-async function retrieveData(url) {
+async function retrieveData(url, options = {}) {
   try {
-    const { data } = await axios.get(url);
+    const { data } = await axios.get(url, { ...options });
     return data;
   } catch (error) {
     throw new Error('Unable to retrieve data');

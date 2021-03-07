@@ -5,7 +5,7 @@ describe('display-results', () => {
     console.log = jest.fn();
     displayResults(999.9);
 
-    expect(console.log.mock.calls[0][0]).toBe(Number(999.9).toFixed(2));
+    expect(console.log.mock.calls[0][0]).toBe('999.90');
   });
 
   it('should throw an error if not a valid number', () => {
