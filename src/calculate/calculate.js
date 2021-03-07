@@ -3,7 +3,7 @@ function calculate(value, to, data) {
     const { rate } = data.find((items) => items.currency === to);
     return rate * value;
   } catch (error) {
-    throw new Error("Unable to calculate conversion");
+    throw new Error('Unable to calculate conversion');
   }
 }
 

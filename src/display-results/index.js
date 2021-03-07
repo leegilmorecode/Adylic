@@ -1,2 +1,1 @@
-const displayResults = require("./display-results");
-module.exports = displayResults;
+module.exports = require('./display-results');

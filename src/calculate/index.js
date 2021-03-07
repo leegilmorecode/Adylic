@@ -1,2 +1,1 @@
-const calculate = require("./calculate");
-module.exports = calculate;
+module.exports = require('./calculate');

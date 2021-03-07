@@ -1,2 +1,1 @@
-const config = require("./config.js");
-module.exports = config;
+module.exports = require('./config.js');

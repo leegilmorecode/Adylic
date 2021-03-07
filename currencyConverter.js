@@ -1,12 +1,12 @@
-const retrieveData = require("./src/retrieve-data");
-const transformData = require("./src/transform-data");
-const retrieveItems = require("./src//retrieve-items");
-const calculate = require("./src/calculate");
-const displayResults = require("./src/display-results");
-const validateArgs = require("./src/validate-args");
-const { dataUrl } = require("./src/config");
+const retrieveData = require('./src/retrieve-data');
+const transformData = require('./src/transform-data');
+const retrieveItems = require('./src//retrieve-items');
+const calculate = require('./src/calculate');
+const displayResults = require('./src/display-results');
+const validateArgs = require('./src/validate-args');
+const { dataUrl } = require('./src/config');
 
-const UNHANDLED_REJECTION = "unhandledRejection";
+const UNHANDLED_REJECTION = 'unhandledRejection';
 
 process.on(UNHANDLED_REJECTION, (err) => {
   console.error(err.message);

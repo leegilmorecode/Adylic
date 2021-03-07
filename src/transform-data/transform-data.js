@@ -1,10 +1,10 @@
-const xml2js = require("xml2js");
+const xml2js = require('xml2js');
 
 async function transformData(data) {
   try {
     return await xml2js.parseStringPromise(data);
   } catch (error) {
-    throw new Error("Unable to transform data");
+    throw new Error('Unable to transform data');
   }
 }
 

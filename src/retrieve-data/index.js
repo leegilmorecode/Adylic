@@ -1,2 +1,1 @@
-const retrieveData = require("./retrieve-data");
-module.exports = retrieveData;
+module.exports = require('./retrieve-data');

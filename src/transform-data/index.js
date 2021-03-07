@@ -1,2 +1,1 @@
-const transformData = require("./transform-data");
-module.exports = transformData;
+module.exports = require('./transform-data');
