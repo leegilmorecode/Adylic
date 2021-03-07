@@ -9,8 +9,8 @@ function validateArgs(args) {
 
   return {
     value,
-    to,
-    from,
+    to: to.toUpperCase(),
+    from: from.toUpperCase(),
   };
 }
 
