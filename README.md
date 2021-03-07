@@ -98,4 +98,4 @@ The solution has utilised esLint, prettier, lint-staged and husky to enure that 
 
 The solution has 100% code coverage as shown in the picture below.
 
-<< add image >>
+![code coverage](docs/images/coverage.png)
