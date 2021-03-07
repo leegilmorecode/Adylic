@@ -109,3 +109,4 @@ If I was to make this production ready I would do the following:
 2. I would add --help feature if this was a CLI.
 3. The current feed is only updated once a day so I would look at optional caching based on config.
 4. I would be more stringint on the schema validation using regexes, checking over posting etc
+5. I would write errors to an app log (this could be turned off via config).

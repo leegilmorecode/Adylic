@@ -7,21 +7,23 @@ const ajv = new Ajv({ allErrors: true });
 const validate = ajv.compile(calculateSchema);
 
 function calculate(value, from, to, data) {
-  if (!validate(data) || data.length === 0)
+  if (!validate(data) || data.length === 0) {
     throw new AppError(
       'Invalid data format',
       `Invalid data format ${JSON.stringify(data)}`,
       errorTypes.INVALID_PARAMETERS,
       logLevels.ERROR,
     );
+  }
 
-  if (to === from)
+  if (to === from) {
     throw new AppError(
       'Cant convert from the same currencies',
       `Cant convert from the same currencies - to: ${to}, from: ${from}`,
       errorTypes.INVALID_PARAMETERS,
       logLevels.ERROR,
     );
+  }
 
   // check if the exchange rate is from/to base euros (no conversation between currencies)
   if (to === euro || from === euro) {
