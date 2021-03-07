@@ -1,6 +1,5 @@
 const retrieveData = require('./src/retrieve-data');
 const transformData = require('./src/transform-data');
-const retrieveItems = require('./src//retrieve-items');
 const calculate = require('./src/calculate');
 const displayResults = require('./src/display-results');
 const validateArgs = require('./src/validate-args');
@@ -16,8 +15,7 @@ process.on(UNHANDLED_REJECTION, (err) => {
 async function convertCurrency() {
   const { value, to } = validateArgs(process.argv);
   const data = await retrieveData(dataUrl);
-  const json = await transformData(data);
-  const items = retrieveItems(json);
+  const items = await transformData(data);
   const result = calculate(value, to, items);
 
   displayResults(result);

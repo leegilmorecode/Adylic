@@ -1,7 +1,7 @@
 {
   "name": "adylic",
   "version": "1.0.0",
-  "description": "adylic tech test - senior nodejs developer",
+  "description": "Adylic tech test - senior nodejs developer",
   "main": "currencyConverter.js",
   "scripts": {
     "start": "node currencyConverter.js",
@@ -27,6 +27,7 @@
     "prettier": "2.2.1"
   },
   "dependencies": {
+    "ajv": "^6.12.6",
     "axios": "^0.21.1",
     "xml2js": "^0.4.23"
   },
@@ -37,6 +38,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js}": "prettier --write"
   }
 }
