@@ -100,3 +100,13 @@ The solution has utilised esLint, prettier, lint-staged and husky to enure that 
 The solution has 100% code coverage as shown in the picture below.
 
 ![code coverage](docs/images/coverage.png)
+
+### Last thoughts
+
+If I was to make this production ready I would do the following:
+
+1. Look at creating the tool as a CLI so it can be installed and ran (_rather than directly through node_).
+2. I would add --help feature if this was a CLI.
+3. I would create a custom error object so I can distinguish between caught and uncaught errors (_not done in this MVP_)
+4. The current feed is only updated once a day so I would look at optional caching based on config.
+5. I would be more stringint on the schema validation using regexes, checking over posting etc
