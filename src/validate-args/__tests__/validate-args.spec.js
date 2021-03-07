@@ -13,11 +13,11 @@ describe('validate-args', () => {
 
   it('should throw an error if invalid amount of args', () => {
     const args = ['node-version', 'path'];
-    expect(() => validateArgs(args)).toThrow(/Invalid amount of arguments provided/);
+    expect(() => validateArgs(args)).toThrow('Invalid amount of arguments provided - args: node-version,path');
   });
 
   it('should throw an error if invalid number provided', () => {
     const args = ['node-version', 'path', 'invalid-number', 'GBP', 'USD'];
-    expect(() => validateArgs(args)).toThrow(/Invalid number provided/);
+    expect(() => validateArgs(args)).toThrow('Invalid number provided - value: NaN');
   });
 });

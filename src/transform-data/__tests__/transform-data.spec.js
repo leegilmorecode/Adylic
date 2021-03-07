@@ -21,6 +21,6 @@ describe('transform-data', () => {
 
   it('should throw an error if unable to transform data', async () => {
     xml2js.parseStringPromise = jest.fn(() => Promise.reject(new Error('error')));
-    await expect(transformData('url')).rejects.toThrow(/Unable to transform data/);
+    await expect(transformData('url')).rejects.toThrow('Unable to transform data - error: error');
   });
 });

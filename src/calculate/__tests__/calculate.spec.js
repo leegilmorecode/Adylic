@@ -49,7 +49,9 @@ describe('calculate', () => {
       { currency: 'USD', rate: 1.1938 },
       { currency: 'GBP', rate: 0.843 },
     ];
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow(
+      'Cant convert from the same currencies - to: USD, from: USD',
+    );
   });
 
   it('should throw an error if the data rate property is missing', () => {
@@ -57,7 +59,7 @@ describe('calculate', () => {
     const to = 'USD';
     const from = 'GBP';
     const data = [{ currency: 'USD' }]; // missing rate property
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow('Invalid data format [{"currency":"USD"}]');
   });
 
   it('should throw an error if the data currency property is missing', () => {
@@ -65,7 +67,7 @@ describe('calculate', () => {
     const to = 'USD';
     const from = 'GBP';
     const data = [{ rate: 0.23 }]; // missing currency property
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow('Invalid data format [{"rate":0.23}]');
   });
 
   it('should throw an error if the data property is an object and not an array of objects', () => {
@@ -73,7 +75,7 @@ describe('calculate', () => {
     const to = 'USD';
     const from = 'GBP';
     const data = {}; // wrong property shape
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow('Invalid data format {}');
   });
 
   it('should throw an error if the data currency property is not a string', () => {
@@ -84,7 +86,9 @@ describe('calculate', () => {
       { currency: 111, rate: 1.1938 }, // currency not a string
       { currency: 'GBP', rate: 0.843 },
     ];
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow(
+      'Invalid data format [{"currency":111,"rate":1.1938},{"currency":"GBP","rate":0.843}]',
+    );
   });
 
   it('should throw an error if the data rate property is not a number', () => {
@@ -95,7 +99,9 @@ describe('calculate', () => {
       { currency: 'USD', rate: '1.1938' }, // rate is a string
       { currency: 'GBP', rate: 0.843 },
     ];
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow(
+      'Invalid data format [{"currency":"USD","rate":"1.1938"},{"currency":"GBP","rate":0.843}]',
+    );
   });
 
   it('should throw an error if unable to perform conversion', () => {
@@ -103,6 +109,6 @@ describe('calculate', () => {
     const to = 'USD';
     const from = 'GBP';
     const data = []; // invalid data
-    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+    expect(() => calculate(value, from, to, data)).toThrow('Invalid data format []');
   });
 });

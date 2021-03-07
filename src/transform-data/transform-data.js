@@ -1,4 +1,5 @@
 const xml2js = require('xml2js');
+const { AppError, logLevels, errorTypes } = require('../common/errors');
 
 async function transformData(data) {
   try {
@@ -12,7 +13,12 @@ async function transformData(data) {
       };
     });
   } catch (error) {
-    throw new Error('Unable to transform data');
+    throw new AppError(
+      'Unable to transform data',
+      `Unable to transform data - error: ${error.message}`,
+      errorTypes.INVALID_OPERATION,
+      logLevels.ERROR,
+    );
   }
 }
 

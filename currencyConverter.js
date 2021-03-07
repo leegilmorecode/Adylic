@@ -5,10 +5,17 @@ const displayResults = require('./src/display-results');
 const validateArgs = require('./src/validate-args');
 const { dataUrl } = require('./src/config');
 
+const { AppError } = require('./src/common/errors');
+
 const UNHANDLED_REJECTION = 'unhandledRejection';
 
 process.on(UNHANDLED_REJECTION, (err) => {
-  console.error(err.message);
+  if (err instanceof AppError) {
+    console.error(err.userMessage);
+  } else {
+    console.error('An error occurred - please try again');
+  }
+
   process.exit(-1);
 });
 

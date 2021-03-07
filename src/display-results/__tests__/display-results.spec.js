@@ -9,6 +9,6 @@ describe('display-results', () => {
   });
 
   it('should throw an error if not a valid number', () => {
-    expect(() => displayResults('test')).toThrow(/An error has occurred/);
+    expect(() => displayResults('test')).toThrow('An error has occurred - result: test');
   });
 });

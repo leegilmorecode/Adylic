@@ -31,6 +31,6 @@ describe('retrieve-data', () => {
 
   it('should throw an error when unable to retrieve data', async () => {
     axios.get.mockImplementationOnce(() => Promise.reject(new Error('error')));
-    await expect(retrieveData('url')).rejects.toThrow(/Unable to retrieve data/);
+    await expect(retrieveData('url')).rejects.toThrow('Unable to retrieve data - error: error');
   });
 });
