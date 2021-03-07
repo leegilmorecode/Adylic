@@ -3,10 +3,14 @@ const calculate = require('../calculate');
 describe('calculate', () => {
   it('should return correct result on success', () => {
     const value = 1000;
+    const from = 'GBP';
     const to = 'USD';
-    const data = [{ currency: 'USD', rate: 1.1938 }];
+    const data = [
+      { currency: 'USD', rate: 1.1938 },
+      { currency: 'GBP', rate: 0.843 },
+    ];
 
-    expect(calculate(value, to, data)).toEqual(Number(1193.8));
+    expect(calculate(value, from, to, data)).toEqual(1416.1328588374854);
   });
 
   it('should throw an error if the data input is in the wrong shape', () => {

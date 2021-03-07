@@ -85,9 +85,10 @@ The following table shows the various commands which can be ran:
 
 The solution has been designed so that:
 
-1. the data feed can be switched out at a later date simply by changing the url in the config file.
-2. the data will most probably come back in a different shape if the url changes, so it can be easily transposed using function _transformData(data)_ so the remainder of the program runs as usual.
-3. The calculation function ensures that the transposed data is in the correct shape using schema validation.
+1. Input parameters are tested up front.
+2. the data feed can be switched out at a later date simply by changing the url in the config file.
+3. the data will most probably come back in a different shape if the url changes, so it can be easily transposed using function _transformData(data)_ so the remainder of the program runs as usual.
+4. The calculation function ensures that the transposed data is in the correct shape using schema validation.
 
 ### Linting/Code Standards
 

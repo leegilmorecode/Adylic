@@ -3,7 +3,7 @@ const validateArgs = require('../validate-args');
 describe('validate-args', () => {
   it('should return args on success', () => {
     const args = ['node-version', 'path', '1000.45', 'GBP', 'USD'];
-    expect(validateArgs(args)).toEqual({ to: 'USD', value: 1000.45 });
+    expect(validateArgs(args)).toEqual({ to: 'USD', from: 'GBP', value: 1000.45 });
   });
 
   it('should throw an error if invalid amount of args', () => {
