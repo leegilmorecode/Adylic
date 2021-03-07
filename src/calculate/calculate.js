@@ -9,6 +9,8 @@ function calculate(value, from, to, data) {
   try {
     if (!validate(data)) throw new Error('Invalid data format');
 
+    if (to === from) throw new error('Cant convert from the same currencies');
+
     // check if the exchange rate is from/to base euros (no conversation between currencies)
     if (to === euro || from === euro) {
       if (from === euro) {

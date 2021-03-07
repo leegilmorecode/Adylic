@@ -41,6 +41,17 @@ describe('calculate', () => {
     });
   });
 
+  it('should throw an error if the to and from currencies are the same', () => {
+    const value = 1000;
+    const to = 'USD';
+    const from = 'USD';
+    const data = [
+      { currency: 'USD', rate: 1.1938 },
+      { currency: 'GBP', rate: 0.843 },
+    ];
+    expect(() => calculate(value, from, to, data)).toThrow(/Unable to calculate conversion/);
+  });
+
   it('should throw an error if the data rate property is missing', () => {
     const value = 1000;
     const to = 'USD';
