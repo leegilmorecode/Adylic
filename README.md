@@ -1,6 +1,6 @@
 # Adylic
 
-Adylic tech test - Senior NodeJS Developer - Lee Gilmore
+Adylic tech test - Senior Backend NodeJS Developer - Lee Gilmore
 
 LinkedIn: _https://www.linkedin.com/in/lee-james-gilmore/_
 
